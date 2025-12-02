@@ -8,6 +8,7 @@
         body {
             font-family: sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -16,10 +17,19 @@
         }
         h1 {
             color: #333;
+            margin-top: 20px;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
+    <img src="profile.jpg" alt="Profile Picture">
     <h1>Hello World</h1>
 </body>
 </html>
