@@ -27,9 +27,9 @@
         }
         h1 {
             font-size: 24px;
-            <!--font-weight: bold;-->
+            /* font-weight: bold; */
             margin-bottom: 5px;
-            <!--text-transform: uppercase;-->
+            /* text-transform: uppercase; */
             letter-spacing: 1px;
         }
         h2 {
@@ -38,7 +38,7 @@
             margin-top: 30px;
             margin-bottom: 10px;
             text-decoration: underline;
-            <!--text-transform: uppercase;-->
+            /* text-transform: uppercase; */
         }
         p {
             font-size: 16px;
@@ -48,6 +48,7 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
+            text-align: left;
         }
         li {
             margin-bottom: 5px;
@@ -64,30 +65,86 @@
         a:hover {
             text-decoration: underline;
         }
+        .cta {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            border: 1px solid #000000;
+            text-decoration: none;
+        }
+        .cta:hover {
+            text-decoration: none;
+        }
+        figure {
+            margin: 20px auto;
+        }
+        iframe {
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="profile.jpg" alt="Henry Hale">
-        
-        <h1>Henry Hale | LSAT Tutor</h1> 
-        <p>Hello! I'm Henry. I scored a 180 on the LSAT and would love to help you improve your score. I studied math and computer science at the University of Chicago and was previously an instructor at <a href="https://mathily.org/mathilyer/">MathILy-Er</a>, a selective summer math program for high schoolers.
 
-        
+        <h1>LSAT 180 tutor to turn your 165-175 into a 175+</h1>
+
+        <p>
+            Hello! I'm Henry. I scored a 180 on the LSAT and would love to help you improve your score. I studied math and computer science at the University of Chicago and was previously an instructor at <a href="https://mathily.org/mathilyer/">MathILy-Er</a>, a selective summer math program for high schoolers.
         </p>
+
+        <p>
+            <a class="cta" href="mailto:henrylhale@gmail.com?subject=LSAT%20tutoring%20intro">Schedule a free 30-minute intro session</a>
+        </p>
+
+        <h2>How I Work</h2>
+        <p>
+            I'm not trying to sell you 20 sessions. Most of my students should see me for 1–5 targeted meetings where we try to build a classification of ways that you tend to lose points and label them with mnemonics. Then we walk through questions so you know how to recognize and prevent near misses.
+        </p>
+
+        <!-- video 1: how i approach lsat tutoring -->
+        <figure>
+            <!-- replace VIDEO_URL_1 with your hosted video url or youtube embed -->
+            <!-- example youtube embed: -->
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" title="How I approach LSAT tutoring" frameborder="0" allowfullscreen></iframe> -->
+            <figcaption>
+                [TODO: Short video explaining who I work best with and what a typical session looks like.]
+            </figcaption>
+        </figure>
+
+        <h2>See a Hard Question Walkthrough</h2>
+
+        <!-- video 2: hard question walkthrough -->
+        <figure>
+            <!-- replace VIDEO_URL_2 with your hosted video url or youtube embed -->
+            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" title="Hard LSAT question walkthrough" frameborder="0" allowfullscreen></iframe> -->
+            <figcaption>
+                [TODO: Walkthrough of a challenging question, including how to read, anticipate, and eliminate wrong answers.]
+            </figcaption>
+        </figure>
+
         <h2>Pricing</h2>
         <p>
-        Free 30 minute intro session, then $160/hr.
+            Free 30-minute intro session to see how we work together and review a recent practice test. After that, $160/hr.
         </p>
 
         <h2>Logistics</h2>
         <p>
-            I live in Seattle and will move to New York City in January. For now, sessions are virtual, but that may change after I move. You can contact me at <a href="mailto:henrylhale@gmail.com">henrylhale@gmail.com</a> to schedule an intro.
-            </p>
-       <div class="contact">
+            I currently tutor over Google Meet and can work with students in any time zone. Starting in January, I’ll be based in New York City; in-person options may open up then. To schedule a free intro session, email <a href="mailto:henrylhale@gmail.com">henrylhale@gmail.com</a> with:
+        </p>
+        <ul>
+            <li>your most recent official or practice LSAT score</li>
+            <li>your target score and test date</li>
+            <li>a sentence or two about what you're struggling with</li>
+            <li>3 suggested times</li>
+        </ul>
+
+        <div class="contact">
             <p>
                 <small>&copy; 2025 Henry Hale</small>
             </p>
+        </div>
     </div>
 </body>
 </html>
+
