@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Trial Confirmed | Henry Hale LSAT Tutoring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-sauce-one" />
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --ink: #1f1f1f;
+      --muted: #6a6a6a;
+      --line: #e7e1d8;
+      --accent: #9c6b2f;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Open Sauce One", "Open Sauce", "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 600px at 15% 10%, #ffffff 0%, var(--paper) 60%),
+        radial-gradient(700px 500px at 90% 0%, #f6efe6 0%, var(--paper) 65%);
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 32px;
+      box-shadow: 0 16px 32px var(--shadow);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 2vw + 1.6rem, 3rem);
+    }
+
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    .details {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      display: grid;
+      gap: 12px;
+    }
+
+    .details strong {
+      color: var(--ink);
+    }
+
+    .cta-row {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    .cta.secondary {
+      background: #f0ece6;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17863897518"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "AW-17863897518");
+    gtag("config", "G-P59KJ25BQ6");
+  </script>
+</head>
+<body>
+  <div class="page">
+    <div class="card">
+      <h1>Your trial session is confirmed.</h1>
+      <p>Thanks for booking! You should receive a confirmation email with the meeting link and details.</p>
+
+      <div class="cta-row">
+        <a class="cta" href="../">Back to the main page</a>
+        <a class="cta secondary" href="mailto:henrylhale@gmail.com">Email Henry</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const allowedSources = new Set(["twitter", "reddit", "meta", "google", "calendly-trial"]);
+    const urlParams = new URLSearchParams(window.location.search);
+    let utmSource = urlParams.get("utm_source");
+    if (!allowedSources.has(utmSource)) {
+      utmSource = null;
+    }
+
+    if (utmSource && window.gtag) {
+      gtag("set", "user_properties", { utm_source: utmSource });
+      gtag("event", "utm_source_detected", { utm_source: utmSource });
+    }
+  </script>
+</body>
+</html>
