@@ -1,0 +1,16 @@
+title: Henry Hale
+description: Personal website of Henry Hale, an AI interpretability researcher.
+url: "https://henrylhale.com"
+
+# Use relative URLs so local preview and prod both work.
+permalink: pretty
+
+exclude:
+  - preview.sh
+  - README.md
+  - "index.html~"
+  - flyer
+  - trial-confirmation
+  - Gemfile
+  - Gemfile.lock
+  - vendor
