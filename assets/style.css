@@ -131,6 +131,113 @@ figure { margin: 0; }
   font-size: 0.95rem;
 }
 
+/* ---------- Selected work cards (home page) ---------- */
+
+.work { margin-top: 3rem; }
+.work > h2 { margin-bottom: 1rem; }
+
+.work-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.work-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 22px;
+  align-items: start;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  transition: border-color 0.12s ease, transform 0.12s ease;
+}
+.work-card:hover,
+.work-card:has(.card-link:focus-visible) {
+  border-color: var(--link);
+  transform: translateY(-1px);
+}
+.work-card:has(.card-link:focus-visible) {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+
+/* The title is the real link; its ::after covers the whole card so the
+   card stays clickable. Inline links in the description sit above it. */
+.card-link {
+  color: inherit;
+  text-decoration: none;
+}
+.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+.card-link:focus-visible { outline: none; }
+
+.work-body p a {
+  position: relative;
+  z-index: 1;
+}
+
+.work-shot {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+  line-height: 0;
+}
+.work-shot img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.work-body h3 {
+  margin: 0 0 0.2em;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+.work-card:hover .work-body h3 { color: var(--link); }
+.work-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin: 0 0 0.5em;
+}
+.work-body p:last-child { margin-bottom: 0; }
+
+@media (max-width: 620px) {
+  .work-card { grid-template-columns: 1fr; gap: 14px; }
+  .work-shot img { height: 170px; }
+}
+
+/* ---------- Placeholders for copy still to be written ---------- */
+/* Delete these rules once every .todo / .todo-inline is gone. */
+
+.todo {
+  border: 1px dashed #b0563f;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.4);
+  color: #8a4331;
+  padding: 10px 14px;
+  margin: 0 0 1em;
+  font-size: 0.95rem;
+}
+.todo p { margin: 0 0 0.4em; }
+.todo p:last-child { margin-bottom: 0; }
+
+.todo-inline {
+  border-bottom: 1px dashed #b0563f;
+  color: #8a4331;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 24px 0 40px;

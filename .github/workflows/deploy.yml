@@ -1,0 +1,75 @@
+name: Build and deploy site
+
+# The tuning apps are NOT stored in this repo. They live in
+# henrylhale/tuning-playground and are pulled in at build time at the
+# commit recorded in .tuning-version. That file is the only thing the
+# tuning repo writes here, so a stale local checkout of `landing` can
+# never overwrite the deployed apps.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v4
+
+      - name: Read pinned tuning version
+        id: tuning
+        run: echo "ref=$(tr -d '[:space:]' < .tuning-version)" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout tuning apps
+        uses: actions/checkout@v4
+        with:
+          repository: henrylhale/tuning-playground
+          ref: ${{ steps.tuning.outputs.ref }}
+          path: .tuning-src
+
+      - name: Stage tuning apps into the site
+        run: |
+          set -euo pipefail
+          mkdir -p tuning
+          cp .tuning-src/*.html tuning/
+          rm -rf .tuning-src
+          echo "Staged:"; ls -1 tuning
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler: latest
+          bundler-cache: true
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
